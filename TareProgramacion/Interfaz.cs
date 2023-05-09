@@ -199,10 +199,12 @@ namespace TareProgramacion
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            foreach (var item in Controls.OfType<TextBox>())
-            {
-                item.Text = string.Empty;
-            }
+            
+            foreach(var item in grpDATOS.Controls.OfType<TextBox>()) 
+                item.Clear();
+            
+                
+            
         }
     }
 }
