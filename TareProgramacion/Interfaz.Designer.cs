@@ -240,6 +240,7 @@
             txtCustomerID.Name = "txtCustomerID";
             txtCustomerID.Size = new Size(114, 23);
             txtCustomerID.TabIndex = 27;
+            txtCustomerID.Validating += txtCustomerID_Validating;
             // 
             // lblCustomerID
             // 

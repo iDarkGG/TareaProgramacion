@@ -39,6 +39,23 @@ namespace TareProgramacion
 
         }
 
+
+        private void TextBoxCleaner()
+        {
+            foreach (var item in grpDATOS.Controls.OfType<TextBox>())
+                item.Clear();
+        }
+
+        private bool TextBoxChecker()
+        {
+            if (txtCustomerID.Text == string.Empty | txtCompanyName.Text == string.Empty)
+            {
+                MessageBox.Show("Customer ID y/o Nombre de la Compañia no pueden estar vacios.","ERROR", MessageBoxButtons.OK);
+                return true;
+            }
+            return false;    
+                
+        }
         private void getDataBase()
         {
             string Query = "SELECT CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax FROM Customers ORDER BY CustomerID;";
@@ -184,24 +201,38 @@ namespace TareProgramacion
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            InsertData();
+            if(!TextBoxChecker())
+                InsertData();
+                TextBoxCleaner();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateData();
+            if (!TextBoxChecker())
+                UpdateData();
+                TextBoxCleaner();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DeleteData();
+            if (!TextBoxChecker())
+                DeleteData();
+                TextBoxCleaner();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            
-            foreach(var item in grpDATOS.Controls.OfType<TextBox>()) 
-                item.Clear();   
+
+            TextBoxCleaner();
+        }
+
+        private void txtCustomerID_Validating(object sender, CancelEventArgs e)
+        {
+            if(txtCustomerID.Text.Length > 5) 
+            {
+                MessageBox.Show("El Valor de Customer ID, no puede superar los 5 Caracteres.", "ERROR", MessageBoxButtons.OK);
+                txtCustomerID.Clear();
+            }
         }
     }
 }
