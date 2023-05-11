@@ -28,6 +28,23 @@ namespace EntityCRUD
 
         }
 
+        private void TextBoxCleaner()
+        {
+            foreach (var item in grpDATOS.Controls.OfType<TextBox>())
+                item.Clear();
+        }
+
+        private bool TextBoxChecker()
+        {
+            if (txtCustomerID.Text == string.Empty | txtCompanyName.Text == string.Empty)
+            {
+                MessageBox.Show("Customer ID y/o Nombre de la Compañia no pueden estar vacios.", "ERROR", MessageBoxButtons.OK);
+                return true;
+            }
+            return false;
+
+        }
+
         private void getDataBase()
         {
             using (var dbContext = new NorthwindContext())
@@ -38,69 +55,73 @@ namespace EntityCRUD
 
         private void InsertData()
         {
-            using (var dbContext = new NorthwindContext())
-            {
-                try
+
+            if (!TextBoxChecker())
+                using (var dbContext = new NorthwindContext())
                 {
-                    var customer = new Customer()
+                    try
                     {
-                        CustomerId = txtCustomerID.Text,
-                        CompanyName = txtCompanyName.Text,
-                        ContactName = txtContactName.Text,
-                        ContactTitle = txtContactTitle.Text,
-                        Address = txtAddress.Text,
-                        City = txtCity.Text,
-                        Region = txtRegion.Text,
-                        PostalCode = txtPostalCode.Text,
-                        Fax = txtFax.Text,
-                        Country = txtPais.Text,
-                        Phone = txtTelefono.Text
-                    };
+                        var customer = new Customer()
+                        {
+                            CustomerId = txtCustomerID.Text,
+                            CompanyName = txtCompanyName.Text,
+                            ContactName = txtContactName.Text,
+                            ContactTitle = txtContactTitle.Text,
+                            Address = txtAddress.Text,
+                            City = txtCity.Text,
+                            Region = txtRegion.Text,
+                            PostalCode = txtPostalCode.Text,
+                            Fax = txtFax.Text,
+                            Country = txtPais.Text,
+                            Phone = txtTelefono.Text
+                        };
 
-                    dbContext.Customers.Add(customer);
-                    dbContext.SaveChanges();
-                    MessageBox.Show("INSERTADO CORRECTAMENTE", "SUCCESS", MessageBoxButtons.OK);
-                    getDataBase();
-                }
-                catch (Exception E)
-                {
-                    MessageBox.Show(E.Message);
-                }
+                        dbContext.Customers.Add(customer);
+                        dbContext.SaveChanges();
+                        MessageBox.Show("INSERTADO CORRECTAMENTE", "SUCCESS", MessageBoxButtons.OK);
+                        TextBoxCleaner();
+                        getDataBase();
+                    }
+                    catch (Exception E)
+                    {
+                        MessageBox.Show(E.Message);
+                    }
 
-            }
+                }
         }
 
         private void UpdateData()
         {
-
-            using (var dbContext = new NorthwindContext())
-            {
-                try
+            if (!TextBoxChecker())
+                using (var dbContext = new NorthwindContext())
                 {
-                    var customer = dbContext.Customers.Find(txtCustomerID.Text);
-                    customer.CompanyName = txtCompanyName.Text;
-                    customer.ContactName = txtContactName.Text;
-                    customer.ContactTitle = txtContactTitle.Text;
-                    customer.Address = txtAddress.Text;
-                    customer.City = txtCity.Text;
-                    customer.Region = txtRegion.Text;
-                    customer.PostalCode = txtPostalCode.Text;
-                    customer.Fax = txtFax.Text;
-                    customer.Country = txtPais.Text;
-                    customer.Phone = txtTelefono.Text;
+                    try
+                    {
+                        var customer = dbContext.Customers.Find(txtCustomerID.Text);
+                        customer.CompanyName = txtCompanyName.Text;
+                        customer.ContactName = txtContactName.Text;
+                        customer.ContactTitle = txtContactTitle.Text;
+                        customer.Address = txtAddress.Text;
+                        customer.City = txtCity.Text;
+                        customer.Region = txtRegion.Text;
+                        customer.PostalCode = txtPostalCode.Text;
+                        customer.Fax = txtFax.Text;
+                        customer.Country = txtPais.Text;
+                        customer.Phone = txtTelefono.Text;
 
 
-                    dbContext.Entry(customer).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                    dbContext.SaveChanges();
-                    MessageBox.Show("DATOS ACTUALIZADOS CORRECTAMENTE", null, MessageBoxButtons.OK);
-                    getDataBase();
+                        dbContext.Entry(customer).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                        dbContext.SaveChanges();
+                        MessageBox.Show("DATOS ACTUALIZADOS CORRECTAMENTE", null, MessageBoxButtons.OK);
+                        TextBoxCleaner();
+                        getDataBase();
+                    }
+                    catch (Exception E)
+                    {
+                        MessageBox.Show(E.Message);
+                    }
+
                 }
-                catch (Exception E)
-                {
-                    MessageBox.Show(E.Message);
-                }
-
-            }
         }
 
         private void DeleteData()
@@ -191,23 +212,33 @@ namespace EntityCRUD
         private void btnInsert_Click(object sender, EventArgs e)
         {
             InsertData();
+            TextBoxCleaner();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             UpdateData();
+            TextBoxCleaner();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DeleteData();
+            TextBoxCleaner();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            TextBoxCleaner();
+        }
 
-            foreach (var item in grpDATOS.Controls.OfType<TextBox>())
-                item.Clear();
+        private void txtCustomerID_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (txtCustomerID.Text.Length > 5)
+            {
+                MessageBox.Show("El Valor de Customer ID, no puede superar los 5 Caracteres.", "ERROR", MessageBoxButtons.OK);
+                txtCustomerID.Clear();
+            }
         }
     }
 }
