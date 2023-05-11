@@ -1,26 +1,15 @@
-using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using EntityCRUD.Data;
+using EntityCRUD.Models;
 
-namespace TareProgramacion
+namespace EntityCRUD
 {
-    public partial class FrmApp : Form
+    public partial class CustomersEF : Form
     {
-        public FrmApp()
+        public CustomersEF()
         {
             InitializeComponent();
         }
 
-        string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
 
         private void TextBoxFiller(string CustomerID, string CompanyName, string ContactName, string ContactTitle, string Address,
             string City, string Region, string PostalCode, string Country, string Phone, string Fax)
@@ -41,85 +30,94 @@ namespace TareProgramacion
 
         private void getDataBase()
         {
-            string Query = "SELECT CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax FROM Customers ORDER BY CustomerID;";
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            using (var dbContext = new NorthwindContext())
             {
-                SqlCommand cmd = new SqlCommand(Query, conn);
-                try
-                {
-                    conn.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                    dgvDATA.DataSource = dataTable;
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message);
-                }
+                dgvDATA.DataSource = dbContext.Customers.ToList();
             }
         }
 
         private void InsertData()
         {
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            using (var dbContext = new NorthwindContext())
             {
                 try
                 {
-                    string Query = "INSERT INTO Customers(CustomerID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country" +
-                        ",Phone,Fax) VALUES('" + txtCustomerID.Text + "','" + txtCompanyName.Text + "','" + txtContactName.Text + "','" + txtContactTitle.Text + "','" + txtAddress.Text + "','" + txtCity.Text + "','" +
-                        txtRegion.Text + "','" + txtPostalCode.Text + "','" + txtPais.Text + "','" + txtTelefono.Text + "','" + txtFax.Text + "')";
-                    SqlCommand cmd = new SqlCommand(Query, conn);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
+                    var customer = new Customer()
+                    {
+                        CustomerId = txtCustomerID.Text,
+                        CompanyName = txtCompanyName.Text,
+                        ContactName = txtContactName.Text,
+                        ContactTitle = txtContactTitle.Text,
+                        Address = txtAddress.Text,
+                        City = txtCity.Text,
+                        Region = txtRegion.Text,
+                        PostalCode = txtPostalCode.Text,
+                        Fax = txtFax.Text,
+                        Country = txtPais.Text,
+                        Phone = txtTelefono.Text
+                    };
+
+                    dbContext.Customers.Add(customer);
+                    dbContext.SaveChanges();
                     MessageBox.Show("INSERTADO CORRECTAMENTE", "SUCCESS", MessageBoxButtons.OK);
                     getDataBase();
-
                 }
-                catch (Exception e)
+                catch (Exception E)
                 {
-                    MessageBox.Show(e.Message);
+                    MessageBox.Show(E.Message);
                 }
+
             }
         }
 
         private void UpdateData()
         {
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
+
+            using (var dbContext = new NorthwindContext())
             {
                 try
                 {
-                    string Query = "UPDATE Customers SET CustomerID = '" + txtCustomerID.Text + "', CompanyName = '" + txtCompanyName.Text + "', ContactName = '" + txtContactName.Text + "', ContactTitle = '" + txtContactTitle.Text + "', Address = '" + txtAddress.Text +
-                        "', City = '" + txtCity.Text + "', Region = '" + txtRegion.Text + "', PostalCode ='" + txtPostalCode.Text + "', Country = '" + txtPais.Text + "', Phone ='" + txtTelefono.Text + "', Fax= '" + txtFax.Text + "' WHERE CustomerID = '" + txtCustomerID.Text + "'";
-                    SqlCommand cmd = new SqlCommand(Query, conn);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
+                    var customer = dbContext.Customers.Find(txtCustomerID.Text);
+                    customer.CompanyName = txtCompanyName.Text;
+                    customer.ContactName = txtContactName.Text;
+                    customer.ContactTitle = txtContactTitle.Text;
+                    customer.Address = txtAddress.Text;
+                    customer.City = txtCity.Text;
+                    customer.Region = txtRegion.Text;
+                    customer.PostalCode = txtPostalCode.Text;
+                    customer.Fax = txtFax.Text;
+                    customer.Country = txtPais.Text;
+                    customer.Phone = txtTelefono.Text;
+
+
+                    dbContext.Entry(customer).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    dbContext.SaveChanges();
                     MessageBox.Show("DATOS ACTUALIZADOS CORRECTAMENTE", null, MessageBoxButtons.OK);
                     getDataBase();
                 }
-                catch (Exception e)
+                catch (Exception E)
                 {
-                    MessageBox.Show(e.Message);
+                    MessageBox.Show(E.Message);
                 }
+
             }
         }
 
         private void DeleteData()
         {
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            using (var dbContext = new NorthwindContext())
             {
                 try
                 {
-                    string Query = "DELETE FROM Customers WHERE CustomerID = '" + txtCustomerID.Text + "'";
-                    SqlCommand cmd = new SqlCommand(Query, conn);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
+                    var customer = dbContext.Customers.Find(txtCustomerID.Text);
+                    dbContext.Customers.Remove(customer!);
+                    dbContext.SaveChanges();
                     MessageBox.Show("DATO ELIMINADO CORRECTAMENTE", null, MessageBoxButtons.OK);
                     getDataBase();
                 }
-                catch (Exception e)
+                catch (Exception E)
                 {
-                    MessageBox.Show(e.Message);
+                    MessageBox.Show(E.Message);
                 }
             }
         }
@@ -169,16 +167,24 @@ namespace TareProgramacion
 
             getDataBase();
 
+
         }
 
         private void dgvDATA_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dgvDATA.Rows[e.RowIndex];
-                TextBoxFiller(row.Cells["CustomerID"].Value.ToString(), row.Cells["CompanyName"].Value.ToString(), row.Cells["ContactName"].Value.ToString(), row.Cells["ContactTitle"].Value.ToString(), row.Cells["Address"].Value.ToString(),
-                    row.Cells["City"].Value.ToString(), row.Cells["Region"].Value.ToString(), row.Cells["PostalCode"].Value.ToString(), row.Cells["Country"].Value.ToString(), row.Cells["Phone"].Value.ToString(),
-                    row.Cells["Fax"].Value.ToString());
+                try
+                {
+                    DataGridViewRow row = dgvDATA.Rows[e.RowIndex];
+                    TextBoxFiller(row.Cells["CustomerID"].Value.ToString(), row.Cells["CompanyName"].Value.ToString(), row.Cells["ContactName"].Value.ToString(), row.Cells["ContactTitle"].Value.ToString(), row.Cells["Address"].Value.ToString(),
+                        row.Cells["City"].Value.ToString(), row.Cells["Region"].Value.ToString(), row.Cells["PostalCode"].Value.ToString(), row.Cells["Country"].Value.ToString(), row.Cells["Phone"].Value.ToString(),
+                        row.Cells["Fax"].Value.ToString());
+                }
+                catch (Exception E)
+                {
+                    MessageBox.Show(E.Message);
+                }
             }
         }
 
@@ -199,9 +205,9 @@ namespace TareProgramacion
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            
-            foreach(var item in grpDATOS.Controls.OfType<TextBox>()) 
-                item.Clear();   
+
+            foreach (var item in grpDATOS.Controls.OfType<TextBox>())
+                item.Clear();
         }
     }
 }
