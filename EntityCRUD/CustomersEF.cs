@@ -177,9 +177,9 @@ namespace EntityCRUD
                 try
                 {
                     DataGridViewRow row = dgvDATA.Rows[e.RowIndex];
-                    TextBoxFiller(row.Cells["CustomerID"].Value.ToString(), row.Cells["CompanyName"].Value.ToString(), row.Cells["ContactName"].Value.ToString(), row.Cells["ContactTitle"].Value.ToString(), row.Cells["Address"].Value.ToString(),
-                        row.Cells["City"].Value.ToString(), row.Cells["Region"].Value.ToString(), row.Cells["PostalCode"].Value.ToString(), row.Cells["Country"].Value.ToString(), row.Cells["Phone"].Value.ToString(),
-                        row.Cells["Fax"].Value.ToString());
+                    TextBoxFiller(row.Cells["CustomerID"].Value?.ToString(), row.Cells["CompanyName"].Value?.ToString(), row.Cells["ContactName"].Value?.ToString(), row.Cells["ContactTitle"].Value?.ToString(), row.Cells["Address"].Value?.ToString(),
+                        row.Cells["City"].Value?.ToString(), row.Cells["Region"].Value?.ToString(), row.Cells["PostalCode"].Value?.ToString(), row.Cells["Country"].Value?.ToString(), row.Cells["Phone"].Value?.ToString(),
+                        row.Cells["Fax"].Value?.ToString());
                 }
                 catch (Exception E)
                 {
