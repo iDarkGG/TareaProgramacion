@@ -28,368 +28,436 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label1 = new Label();
-            btnSalir = new Button();
-            dgvDATA = new DataGridView();
-            btnUpdate = new Button();
-            btnDelete = new Button();
-            txtCompanyName = new TextBox();
-            txtContactName = new TextBox();
-            txtAddress = new TextBox();
-            txtContactTitle = new TextBox();
-            txtPais = new TextBox();
-            txtPostalCode = new TextBox();
-            txtRegion = new TextBox();
-            txtCity = new TextBox();
-            txtFax = new TextBox();
-            txtTelefono = new TextBox();
-            grpDATOS = new GroupBox();
-            txtCustomerID = new TextBox();
-            lblCustomerID = new Label();
-            lblFax = new Label();
-            lblTelefono = new Label();
-            blPais = new Label();
-            lblCodigoPostal = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            btnInsert = new Button();
-            btnLimpiar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvDATA).BeginInit();
-            grpDATOS.SuspendLayout();
-            SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.dgvDATA = new System.Windows.Forms.DataGridView();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.txtContactName = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtContactTitle = new System.Windows.Forms.TextBox();
+            this.txtPais = new System.Windows.Forms.TextBox();
+            this.txtPostalCode = new System.Windows.Forms.TextBox();
+            this.txtRegion = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtFax = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.grpDATOS = new System.Windows.Forms.GroupBox();
+            this.txtCustomerID = new System.Windows.Forms.TextBox();
+            this.lblCustomerID = new System.Windows.Forms.Label();
+            this.lblFax = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.blPais = new System.Windows.Forms.Label();
+            this.lblCodigoPostal = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDATA)).BeginInit();
+            this.grpDATOS.SuspendLayout();
+            this.SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(12, 116);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "CARGAR";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(47, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(214, 15);
-            label1.TabIndex = 1;
-            label1.Text = "POR FAVOR SELECCIONE UNA OPCION";
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(166)))), ((int)(((byte)(126)))));
+            this.button1.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(229)))), ((int)(((byte)(218)))));
+            this.button1.Location = new System.Drawing.Point(12, 116);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "CARGAR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(223, 116);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 2;
-            btnSalir.Text = "SALIR";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(166)))), ((int)(((byte)(126)))));
+            this.btnSalir.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(229)))), ((int)(((byte)(218)))));
+            this.btnSalir.Location = new System.Drawing.Point(223, 116);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // dgvDATA
             // 
-            dgvDATA.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvDATA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDATA.Dock = DockStyle.Bottom;
-            dgvDATA.Location = new Point(0, 444);
-            dgvDATA.Name = "dgvDATA";
-            dgvDATA.RowTemplate.Height = 25;
-            dgvDATA.Size = new Size(1011, 150);
-            dgvDATA.TabIndex = 3;
-            dgvDATA.CellClick += dgvDATA_CellClick;
+            this.dgvDATA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDATA.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(242)))), ((int)(((byte)(182)))));
+            this.dgvDATA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDATA.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvDATA.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(166)))), ((int)(((byte)(126)))));
+            this.dgvDATA.Location = new System.Drawing.Point(0, 444);
+            this.dgvDATA.Name = "dgvDATA";
+            this.dgvDATA.RowTemplate.Height = 25;
+            this.dgvDATA.Size = new System.Drawing.Size(1011, 150);
+            this.dgvDATA.TabIndex = 3;
+            this.dgvDATA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDATA_CellClick);
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(93, 116);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(75, 23);
-            btnUpdate.TabIndex = 4;
-            btnUpdate.Text = "UPDATE";
-            btnUpdate.UseVisualStyleBackColor = true;
-            btnUpdate.Click += btnUpdate_Click;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(166)))), ((int)(((byte)(126)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(229)))), ((int)(((byte)(218)))));
+            this.btnUpdate.Location = new System.Drawing.Point(93, 116);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(93, 145);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
-            btnDelete.TabIndex = 5;
-            btnDelete.Text = "DELETE";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(166)))), ((int)(((byte)(126)))));
+            this.btnDelete.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(229)))), ((int)(((byte)(218)))));
+            this.btnDelete.Location = new System.Drawing.Point(93, 145);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtCompanyName
             // 
-            txtCompanyName.Location = new Point(6, 115);
-            txtCompanyName.Name = "txtCompanyName";
-            txtCompanyName.Size = new Size(196, 23);
-            txtCompanyName.TabIndex = 6;
-            txtCompanyName.Text = "  ";
+            this.txtCompanyName.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCompanyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtCompanyName.Location = new System.Drawing.Point(6, 115);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(196, 22);
+            this.txtCompanyName.TabIndex = 6;
+            this.txtCompanyName.Text = "  ";
             // 
             // txtContactName
             // 
-            txtContactName.Location = new Point(6, 161);
-            txtContactName.Name = "txtContactName";
-            txtContactName.Size = new Size(196, 23);
-            txtContactName.TabIndex = 7;
-            txtContactName.Text = "  ";
+            this.txtContactName.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtContactName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtContactName.Location = new System.Drawing.Point(6, 161);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(196, 22);
+            this.txtContactName.TabIndex = 7;
+            this.txtContactName.Text = "  ";
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(6, 248);
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(196, 23);
-            txtAddress.TabIndex = 9;
-            txtAddress.Text = "  ";
+            this.txtAddress.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtAddress.Location = new System.Drawing.Point(6, 248);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(196, 22);
+            this.txtAddress.TabIndex = 9;
+            this.txtAddress.Text = "  ";
             // 
             // txtContactTitle
             // 
-            txtContactTitle.Location = new Point(6, 206);
-            txtContactTitle.Name = "txtContactTitle";
-            txtContactTitle.Size = new Size(196, 23);
-            txtContactTitle.TabIndex = 8;
-            txtContactTitle.Text = "  ";
+            this.txtContactTitle.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtContactTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtContactTitle.Location = new System.Drawing.Point(6, 206);
+            this.txtContactTitle.Name = "txtContactTitle";
+            this.txtContactTitle.Size = new System.Drawing.Size(196, 22);
+            this.txtContactTitle.TabIndex = 8;
+            this.txtContactTitle.Text = "  ";
             // 
             // txtPais
             // 
-            txtPais.Location = new Point(326, 206);
-            txtPais.Name = "txtPais";
-            txtPais.Size = new Size(196, 23);
-            txtPais.TabIndex = 13;
-            txtPais.Text = "  ";
+            this.txtPais.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtPais.Location = new System.Drawing.Point(326, 206);
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(196, 22);
+            this.txtPais.TabIndex = 13;
+            this.txtPais.Text = "  ";
             // 
             // txtPostalCode
             // 
-            txtPostalCode.Location = new Point(326, 161);
-            txtPostalCode.Name = "txtPostalCode";
-            txtPostalCode.Size = new Size(196, 23);
-            txtPostalCode.TabIndex = 12;
-            txtPostalCode.Text = "  ";
+            this.txtPostalCode.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPostalCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtPostalCode.Location = new System.Drawing.Point(326, 161);
+            this.txtPostalCode.Name = "txtPostalCode";
+            this.txtPostalCode.Size = new System.Drawing.Size(196, 22);
+            this.txtPostalCode.TabIndex = 12;
+            this.txtPostalCode.Text = "  ";
             // 
             // txtRegion
             // 
-            txtRegion.Location = new Point(326, 115);
-            txtRegion.Name = "txtRegion";
-            txtRegion.Size = new Size(196, 23);
-            txtRegion.TabIndex = 11;
-            txtRegion.Text = "  ";
+            this.txtRegion.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRegion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtRegion.Location = new System.Drawing.Point(326, 115);
+            this.txtRegion.Name = "txtRegion";
+            this.txtRegion.Size = new System.Drawing.Size(196, 22);
+            this.txtRegion.TabIndex = 11;
+            this.txtRegion.Text = "  ";
             // 
             // txtCity
             // 
-            txtCity.Location = new Point(6, 296);
-            txtCity.Name = "txtCity";
-            txtCity.Size = new Size(196, 23);
-            txtCity.TabIndex = 10;
-            txtCity.Text = "  ";
+            this.txtCity.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtCity.Location = new System.Drawing.Point(6, 296);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(196, 22);
+            this.txtCity.TabIndex = 10;
+            this.txtCity.Text = "  ";
             // 
             // txtFax
             // 
-            txtFax.Location = new Point(326, 296);
-            txtFax.Name = "txtFax";
-            txtFax.Size = new Size(196, 23);
-            txtFax.TabIndex = 15;
-            txtFax.Text = "  ";
+            this.txtFax.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtFax.Location = new System.Drawing.Point(326, 296);
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(196, 22);
+            this.txtFax.TabIndex = 15;
+            this.txtFax.Text = "  ";
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(326, 248);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(196, 23);
-            txtTelefono.TabIndex = 14;
-            txtTelefono.Text = "  ";
+            this.txtTelefono.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtTelefono.Location = new System.Drawing.Point(326, 248);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(196, 22);
+            this.txtTelefono.TabIndex = 14;
+            this.txtTelefono.Text = "  ";
             // 
             // grpDATOS
             // 
-            grpDATOS.Controls.Add(txtCustomerID);
-            grpDATOS.Controls.Add(lblCustomerID);
-            grpDATOS.Controls.Add(lblFax);
-            grpDATOS.Controls.Add(lblTelefono);
-            grpDATOS.Controls.Add(blPais);
-            grpDATOS.Controls.Add(lblCodigoPostal);
-            grpDATOS.Controls.Add(label7);
-            grpDATOS.Controls.Add(label6);
-            grpDATOS.Controls.Add(label5);
-            grpDATOS.Controls.Add(label4);
-            grpDATOS.Controls.Add(label3);
-            grpDATOS.Controls.Add(label2);
-            grpDATOS.Controls.Add(txtCompanyName);
-            grpDATOS.Controls.Add(txtFax);
-            grpDATOS.Controls.Add(txtContactName);
-            grpDATOS.Controls.Add(txtTelefono);
-            grpDATOS.Controls.Add(txtContactTitle);
-            grpDATOS.Controls.Add(txtPais);
-            grpDATOS.Controls.Add(txtAddress);
-            grpDATOS.Controls.Add(txtPostalCode);
-            grpDATOS.Controls.Add(txtCity);
-            grpDATOS.Controls.Add(txtRegion);
-            grpDATOS.Location = new Point(388, 12);
-            grpDATOS.Name = "grpDATOS";
-            grpDATOS.Size = new Size(592, 326);
-            grpDATOS.TabIndex = 16;
-            grpDATOS.TabStop = false;
+            this.grpDATOS.Controls.Add(this.txtCustomerID);
+            this.grpDATOS.Controls.Add(this.lblCustomerID);
+            this.grpDATOS.Controls.Add(this.lblFax);
+            this.grpDATOS.Controls.Add(this.lblTelefono);
+            this.grpDATOS.Controls.Add(this.blPais);
+            this.grpDATOS.Controls.Add(this.lblCodigoPostal);
+            this.grpDATOS.Controls.Add(this.label7);
+            this.grpDATOS.Controls.Add(this.label6);
+            this.grpDATOS.Controls.Add(this.label5);
+            this.grpDATOS.Controls.Add(this.label4);
+            this.grpDATOS.Controls.Add(this.label3);
+            this.grpDATOS.Controls.Add(this.label2);
+            this.grpDATOS.Controls.Add(this.txtCompanyName);
+            this.grpDATOS.Controls.Add(this.txtFax);
+            this.grpDATOS.Controls.Add(this.txtContactName);
+            this.grpDATOS.Controls.Add(this.txtTelefono);
+            this.grpDATOS.Controls.Add(this.txtContactTitle);
+            this.grpDATOS.Controls.Add(this.txtPais);
+            this.grpDATOS.Controls.Add(this.txtAddress);
+            this.grpDATOS.Controls.Add(this.txtPostalCode);
+            this.grpDATOS.Controls.Add(this.txtCity);
+            this.grpDATOS.Controls.Add(this.txtRegion);
+            this.grpDATOS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(92)))));
+            this.grpDATOS.Location = new System.Drawing.Point(388, 12);
+            this.grpDATOS.Name = "grpDATOS";
+            this.grpDATOS.Size = new System.Drawing.Size(592, 326);
+            this.grpDATOS.TabIndex = 16;
+            this.grpDATOS.TabStop = false;
             // 
             // txtCustomerID
             // 
-            txtCustomerID.Location = new Point(11, 46);
-            txtCustomerID.Name = "txtCustomerID";
-            txtCustomerID.Size = new Size(114, 23);
-            txtCustomerID.TabIndex = 27;
-            txtCustomerID.Validating += txtCustomerID_Validating;
+            this.txtCustomerID.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCustomerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(109)))), ((int)(((byte)(96)))));
+            this.txtCustomerID.Location = new System.Drawing.Point(11, 46);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.Size = new System.Drawing.Size(114, 22);
+            this.txtCustomerID.TabIndex = 27;
             // 
             // lblCustomerID
             // 
-            lblCustomerID.AutoSize = true;
-            lblCustomerID.Location = new Point(6, 28);
-            lblCustomerID.Name = "lblCustomerID";
-            lblCustomerID.Size = new Size(84, 15);
-            lblCustomerID.TabIndex = 26;
-            lblCustomerID.Text = "CUSTOMERID: ";
+            this.lblCustomerID.AutoSize = true;
+            this.lblCustomerID.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCustomerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.lblCustomerID.Location = new System.Drawing.Point(6, 28);
+            this.lblCustomerID.Name = "lblCustomerID";
+            this.lblCustomerID.Size = new System.Drawing.Size(107, 16);
+            this.lblCustomerID.TabIndex = 26;
+            this.lblCustomerID.Text = "CUSTOMERID: ";
             // 
             // lblFax
             // 
-            lblFax.AutoSize = true;
-            lblFax.Location = new Point(326, 278);
-            lblFax.Name = "lblFax";
-            lblFax.Size = new Size(25, 15);
-            lblFax.TabIndex = 25;
-            lblFax.Text = "Fax";
+            this.lblFax.AutoSize = true;
+            this.lblFax.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.lblFax.Location = new System.Drawing.Point(326, 278);
+            this.lblFax.Name = "lblFax";
+            this.lblFax.Size = new System.Drawing.Size(30, 16);
+            this.lblFax.TabIndex = 25;
+            this.lblFax.Text = "Fax";
             // 
             // lblTelefono
             // 
-            lblTelefono.AutoSize = true;
-            lblTelefono.Location = new Point(326, 230);
-            lblTelefono.Name = "lblTelefono";
-            lblTelefono.Size = new Size(52, 15);
-            lblTelefono.TabIndex = 24;
-            lblTelefono.Text = "Telefono";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.lblTelefono.Location = new System.Drawing.Point(326, 230);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(56, 16);
+            this.lblTelefono.TabIndex = 24;
+            this.lblTelefono.Text = "Telefono";
             // 
             // blPais
             // 
-            blPais.AutoSize = true;
-            blPais.Location = new Point(326, 188);
-            blPais.Name = "blPais";
-            blPais.Size = new Size(28, 15);
-            blPais.TabIndex = 23;
-            blPais.Text = "Pais";
+            this.blPais.AutoSize = true;
+            this.blPais.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.blPais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.blPais.Location = new System.Drawing.Point(326, 188);
+            this.blPais.Name = "blPais";
+            this.blPais.Size = new System.Drawing.Size(33, 16);
+            this.blPais.TabIndex = 23;
+            this.blPais.Text = "Pais";
             // 
             // lblCodigoPostal
             // 
-            lblCodigoPostal.AutoSize = true;
-            lblCodigoPostal.Location = new Point(326, 143);
-            lblCodigoPostal.Name = "lblCodigoPostal";
-            lblCodigoPostal.Size = new Size(81, 15);
-            lblCodigoPostal.TabIndex = 22;
-            lblCodigoPostal.Text = "Codigo Postal";
+            this.lblCodigoPostal.AutoSize = true;
+            this.lblCodigoPostal.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCodigoPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.lblCodigoPostal.Location = new System.Drawing.Point(326, 143);
+            this.lblCodigoPostal.Name = "lblCodigoPostal";
+            this.lblCodigoPostal.Size = new System.Drawing.Size(87, 16);
+            this.lblCodigoPostal.TabIndex = 22;
+            this.lblCodigoPostal.Text = "Codigo Postal";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(326, 97);
-            label7.Name = "label7";
-            label7.Size = new Size(44, 15);
-            label7.TabIndex = 21;
-            label7.Text = "Region";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.label7.Location = new System.Drawing.Point(326, 97);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 16);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Region";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(6, 278);
-            label6.Name = "label6";
-            label6.Size = new Size(45, 15);
-            label6.TabIndex = 20;
-            label6.Text = "Ciudad";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.label6.Location = new System.Drawing.Point(6, 278);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 16);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Ciudad";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 230);
-            label5.Name = "label5";
-            label5.Size = new Size(57, 15);
-            label5.TabIndex = 19;
-            label5.Text = "Direccion";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.label5.Location = new System.Drawing.Point(6, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 16);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Direccion";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 188);
-            label4.Name = "label4";
-            label4.Size = new Size(105, 15);
-            label4.TabIndex = 18;
-            label4.Text = "Titulo de Contacto";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.label4.Location = new System.Drawing.Point(6, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 16);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Titulo de Contacto";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(6, 143);
-            label3.Name = "label3";
-            label3.Size = new Size(119, 15);
-            label3.TabIndex = 17;
-            label3.Text = "Nombre de Contacto";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.label3.Location = new System.Drawing.Point(6, 143);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 16);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Nombre de Contacto";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 97);
-            label2.Name = "label2";
-            label2.Size = new Size(137, 15);
-            label2.TabIndex = 16;
-            label2.Text = "Nombre de la Compañia";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.label2.Location = new System.Drawing.Point(6, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 16);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Nombre de la Compañia";
             // 
             // btnInsert
             // 
-            btnInsert.Location = new Point(174, 147);
-            btnInsert.Name = "btnInsert";
-            btnInsert.Size = new Size(75, 23);
-            btnInsert.TabIndex = 17;
-            btnInsert.Text = "INSERT";
-            btnInsert.UseVisualStyleBackColor = true;
-            btnInsert.Click += btnInsert_Click;
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(166)))), ((int)(((byte)(126)))));
+            this.btnInsert.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnInsert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(229)))), ((int)(((byte)(218)))));
+            this.btnInsert.Location = new System.Drawing.Point(174, 147);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnInsert.TabIndex = 17;
+            this.btnInsert.Text = "INSERT";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(255, 147);
-            btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(75, 23);
-            btnLimpiar.TabIndex = 18;
-            btnLimpiar.Text = "LIMPIAR";
-            btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnLimpiar_Click;
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(166)))), ((int)(((byte)(126)))));
+            this.btnLimpiar.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(229)))), ((int)(((byte)(218)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(255, 147);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(82, 23);
+            this.btnLimpiar.TabIndex = 18;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(81)))), ((int)(((byte)(65)))));
+            this.label8.Location = new System.Drawing.Point(28, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(270, 16);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "POR FAVOR SELECCIONE UNA OPCION";
             // 
             // CustomersEF
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1011, 594);
-            Controls.Add(btnLimpiar);
-            Controls.Add(btnInsert);
-            Controls.Add(grpDATOS);
-            Controls.Add(btnDelete);
-            Controls.Add(btnUpdate);
-            Controls.Add(dgvDATA);
-            Controls.Add(btnSalir);
-            Controls.Add(label1);
-            Controls.Add(button1);
-            Name = "CustomersEF";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "PROGRAMACION2";
-            Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvDATA).EndInit();
-            grpDATOS.ResumeLayout(false);
-            grpDATOS.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.ClientSize = new System.Drawing.Size(1011, 594);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.grpDATOS);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.dgvDATA);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.Name = "CustomersEF";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PROGRAMACION2";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDATA)).EndInit();
+            this.grpDATOS.ResumeLayout(false);
+            this.grpDATOS.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private Button button1;
-        private Label label1;
         private Button btnSalir;
         private DataGridView dgvDATA;
         private Button btnUpdate;
@@ -419,5 +487,6 @@
         private Button btnInsert;
         private TextBox txtCustomerID;
         private Button btnLimpiar;
+        private Label label8;
     }
 }

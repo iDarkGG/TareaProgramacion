@@ -98,6 +98,7 @@ namespace EntityCRUD
                     try
                     {
                         var customer = dbContext.Customers.Find(txtCustomerID.Text);
+                        
                         customer.CompanyName = txtCompanyName.Text;
                         customer.ContactName = txtContactName.Text;
                         customer.ContactTitle = txtContactTitle.Text;
@@ -108,7 +109,6 @@ namespace EntityCRUD
                         customer.Fax = txtFax.Text;
                         customer.Country = txtPais.Text;
                         customer.Phone = txtTelefono.Text;
-
 
                         dbContext.Entry(customer).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                         dbContext.SaveChanges();
@@ -181,7 +181,7 @@ namespace EntityCRUD
             this.btnUpdate.Location = new Point(820, 120);
             this.btnDelete.Location = new Point(740, 120);
             this.btnInsert.Location = new Point(660, 120);
-            this.label1.Location = new Point(380, 9);
+            this.label8.Location = new Point(380, 9);
             this.grpDATOS.Location = new Point(0, 50);
             this.dgvDATA.Size = new Size(100, 300);
             dgvDATA.Visible = true;
