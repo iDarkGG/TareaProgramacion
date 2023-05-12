@@ -15,6 +15,7 @@ namespace TareProgramacion
 {
     public partial class FrmApp : Form
     {
+        private string localCustomerID;
         public FrmApp()
         {
             InitializeComponent();
@@ -36,6 +37,8 @@ namespace TareProgramacion
             txtFax.Text = Fax;
             txtPais.Text = Country;
             txtTelefono.Text = Phone;
+
+            localCustomerID = CustomerID;
 
         }
 
@@ -107,7 +110,7 @@ namespace TareProgramacion
                 try
                 {
                     string Query = "UPDATE Customers SET CustomerID = '" + txtCustomerID.Text + "', CompanyName = '" + txtCompanyName.Text + "', ContactName = '" + txtContactName.Text + "', ContactTitle = '" + txtContactTitle.Text + "', Address = '" + txtAddress.Text +
-                        "', City = '" + txtCity.Text + "', Region = '" + txtRegion.Text + "', PostalCode ='" + txtPostalCode.Text + "', Country = '" + txtPais.Text + "', Phone ='" + txtTelefono.Text + "', Fax= '" + txtFax.Text + "' WHERE CustomerID = '" + txtCustomerID.Text + "'";
+                        "', City = '" + txtCity.Text + "', Region = '" + txtRegion.Text + "', PostalCode ='" + txtPostalCode.Text + "', Country = '" + txtPais.Text + "', Phone ='" + txtTelefono.Text + "', Fax = '" + txtFax.Text + "' WHERE CustomerID = '" + localCustomerID + "'";
                     SqlCommand cmd = new SqlCommand(Query, conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
